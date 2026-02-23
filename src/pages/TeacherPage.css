@@ -1,0 +1,26 @@
+.cards-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card.teachers {
+  background: #008080;
+}
+
+.card.pending {
+  background: #5c6bc0;
+}
+
+.card.salary {
+  background: #ef5350;
+}

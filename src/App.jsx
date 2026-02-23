@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminTeacherDashboard from "./pages/AdminTeacherDashboard";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
 import QuizPage from "./pages/QuizPage";
@@ -16,11 +17,15 @@ function App() {
       <Navbar />
 
       <Routes>
+        {/* Public */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminDashboard />} />
 
+<Route path="/admin/teachers" element={<AdminTeacherDashboard />} />
+        {/* Admin Routes */}
         <Route
           path="/admin"
           element={
@@ -31,14 +36,18 @@ function App() {
         />
 
         <Route
-          path="/teacher"
+          path="/admin/teachers"
           element={
             <ProtectedRoute>
-              <TeacherDashboard />
+              <AdminTeacherDashboard />
             </ProtectedRoute>
           }
         />
 
+        {/* Teacher (separate teacher login area) */}
+        
+
+        {/* Student */}
         <Route
           path="/student"
           element={
@@ -48,6 +57,7 @@ function App() {
           }
         />
 
+        {/* Quiz */}
         <Route
           path="/quiz"
           element={
