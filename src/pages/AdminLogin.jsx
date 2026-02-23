@@ -1,0 +1,56 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import "./AdminLogin.css";
+
+const AdminLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+
+      localStorage.setItem("role", "admin");
+
+      navigate("/admin");
+    } catch (error) {
+      alert("Invalid Admin Credentials");
+    }
+  };
+
+  return (
+    <div className="admin-container">
+      <div className="login-card">
+        <h1>ADMIN LOGIN</h1>
+        <p>Please enter your login and password!</p>
+
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Enter Admin Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default AdminLogin;

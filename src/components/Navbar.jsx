@@ -10,9 +10,13 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/teacher">Teacher</Link>
         <Link to="/student">Student</Link>
-        <Link to="/admin">Admin</Link>
+
+        {/* FIXED HERE */}
+        <Link to="/admin-login">Admin</Link>
+
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
+
         <button className="logout-btn" onClick={logout}>
           Logout
         </button>

@@ -1,0 +1,102 @@
+.admin-dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 220px;
+  background: #1e1e2f;
+  color: white;
+  padding: 20px;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #2e2e45;
+}
+
+/* Topbar */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #20232a;
+  color: white;
+  padding: 15px 20px;
+}
+
+.topbar button {
+  background: #0dcaf0;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Dashboard */
+
+.dashboard-content {
+  flex: 1;
+  background: #f4f4f4;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+}
+
+.students {
+  background: #0f8b8d;
+}
+
+.teachers {
+  background: #5a5abf;
+}
+
+.courses {
+  background: #ff6b6b;
+}
+
+.questions {
+  background: #7b4a3e;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #20232a;
+  color: white;
+  margin-top: 150px;
+}
