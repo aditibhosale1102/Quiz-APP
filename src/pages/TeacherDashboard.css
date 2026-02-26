@@ -43,3 +43,45 @@
   border: none;
   cursor: pointer;
 }
+.pending-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.pending-title {
+  background: #4a86c5;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.pending-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pending-table th,
+.pending-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.approve-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}

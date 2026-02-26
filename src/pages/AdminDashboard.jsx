@@ -1,7 +1,11 @@
 import AdminSidebar from "../components/AdminSidebar";
 import AdminTopbar from "../components/AdminTopbar";
+import { useNavigate } from "react-router-dom";
 import "../pages/AdminDashboard.css";
+
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="admin-dashboard">
       <AdminSidebar />
@@ -9,16 +13,23 @@ const AdminDashboard = () => {
       <div className="dashboard-content">
         <AdminTopbar />
 
+
         <div className="cards-container">
-          <div className="card students">
+          {/* Students Card */}
+          <div
+            className="card students"
+            onClick={() => navigate("/students")}
+            style={{ cursor: "pointer" }}
+          >
             <h3>Total Students</h3>
-            <p>2</p>
+            <p>View</p>
           </div>
 
           <div className="card teachers">
             <h3>Total Teacher</h3>
             <p>1</p>
           </div>
+
 
           <div className="card courses">
             <h3>Total Courses</h3>
@@ -30,8 +41,6 @@ const AdminDashboard = () => {
             <p>3</p>
           </div>
         </div>
-
-        
       </div>
     </div>
   );

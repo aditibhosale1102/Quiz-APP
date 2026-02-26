@@ -1,0 +1,65 @@
+.admin-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.green {
+  background: #1abc9c;
+}
+
+.purple {
+  background: #5b5fc7;
+}
+
+.form-container {
+  flex: 1;
+  padding: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+}

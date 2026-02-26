@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";   // NEW
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import { addQuiz } from "../services/quizService";
@@ -12,6 +13,8 @@ const TeacherDashboard = () => {
   const [totalTeachers, setTotalTeachers] = useState(0);
   const [pendingTeachers, setPendingTeachers] = useState(0);
   const [totalSalary, setTotalSalary] = useState(0);
+
+  const navigate = useNavigate(); // NEW
 
   useEffect(() => {
     fetchTeachers();
@@ -48,6 +51,11 @@ const TeacherDashboard = () => {
     setQuestion("");
   };
 
+  // CLICK FUNCTION
+  const goToPendingTeachers = () => {
+    navigate("/admin/pending-teachers");
+  };
+
   return (
     <div className="admin-dashboard">
       <AdminSidebar />
@@ -62,7 +70,12 @@ const TeacherDashboard = () => {
             <p>{totalTeachers}</p>
           </div>
 
-          <div className="card pending">
+          {/* CLICKABLE CARD */}
+          <div
+            className="card pending"
+            onClick={goToPendingTeachers}
+            style={{ cursor: "pointer" }}
+          >
             <h3>Total Pending Teacher</h3>
             <p>{pendingTeachers}</p>
           </div>
@@ -71,20 +84,6 @@ const TeacherDashboard = () => {
             <h3>Total Teacher Salary</h3>
             <p>₹ {totalSalary}</p>
           </div>
-        </div>
-
-        {/* QUIZ SECTION */}
-        <div className="quiz-section">
-          <h2>Add Quiz Question</h2>
-
-          <input
-            type="text"
-            value={question}
-            placeholder="Enter Question"
-            onChange={(e) => setQuestion(e.target.value)}
-          />
-
-          <button onClick={createQuiz}>Add Quiz</button>
         </div>
       </div>
     </div>
