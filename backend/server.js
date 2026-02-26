@@ -61,6 +61,34 @@ app.post('/api/student/login', (req, res) => {
     }
 });
 
+let teachers = [];
+
+// Teacher Signup
+app.post('/api/teacher/signup', (req, res) => {
+    const newTeacher = {
+        id: teachers.length > 0 ? teachers[teachers.length - 1].id + 1 : 1,
+        ...req.body
+    };
+    teachers.push(newTeacher);
+    res.status(201).json({ success: true, message: "Teacher registered successfully", teacher: newTeacher });
+});
+
+// Teacher Login
+app.post('/api/teacher/login', (req, res) => {
+    const { username, password } = req.body;
+    const teacher = teachers.find(t => t.username === username && t.password === password);
+    if (teacher) {
+        res.status(200).json({ success: true, user: teacher });
+    } else {
+        // Mock fallback if user just wants generic login without signup first
+        if (username === "admin" && password === "admin") {
+            res.status(200).json({ success: true, user: { username: "admin" } });
+        } else {
+            res.status(400).json({ success: false, message: "Invalid credentials" });
+        }
+    }
+});
+
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

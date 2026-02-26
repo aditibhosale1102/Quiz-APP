@@ -26,6 +26,8 @@ import AddCourse from "./pages/AddCourse";
 import ViewCourse from "./pages/ViewCourse";
 import StudentLanding from "./pages/StudentLanding";
 import StudentSignup from "./pages/StudentSignup";
+import TeacherSignup from "./pages/TeacherSignup";
+import TeacherLoginForm from "./pages/TeacherLoginForm";
 import StudentLoginForm from "./pages/StudentLoginForm";
 import TeacherLanding from "./pages/TeacherLanding";
 
@@ -43,6 +45,8 @@ function App() {
         <Route path="/student-signup" element={<StudentSignup />} />
         <Route path="/student-login" element={<StudentLoginForm />} />
         <Route path="/teacher-landing" element={<TeacherLanding />} />
+        <Route path="/teacher-signup" element={<TeacherSignup />} />
+        <Route path="/teacher-login" element={<TeacherLoginForm />} />
         <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/admin/add-course" element={<AddCourse />} />
